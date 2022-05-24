@@ -54,6 +54,7 @@ i {
 }
 
 .container .header {
+    height: 10vh;
     background-color: #E6DFD6;
     justify-content: space-between;
     border: 1px solid lightgray;
@@ -76,8 +77,10 @@ i {
 }
 
 .notifications.box {
+    height: 10vh;
     background-color: #8EDAFC;
     padding: 10px;
+    align-items: center;
 }
 
 .notifications .icon.box {
@@ -97,6 +100,7 @@ i {
 }
 
 .searchbar {
+    height: 8vh;
     font-size: 14px;
     padding: 10px;
 }
@@ -111,7 +115,7 @@ i {
 }
 
 .contact-list {
-    max-height: 62vh;
+    height: 61.5vh;
     overflow-y: scroll;
 }
 
@@ -143,7 +147,6 @@ i {
     font-size: 12px;
 }
 
-
 /* --- RIGHT-SIDE --- */
 .right-side.container {
     width: 65%;
@@ -153,4 +156,37 @@ i {
     font-size: 12px;
     color: gray;
     margin-top: 2px;
+}
+
+.messages {
+    height: 70vh;
+    background-image: url(../img/mine.jpg);
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.messages .message {
+    width: 22vw;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 50px;
+    position: relative;
+}
+
+.messages .message .time-message {
+    color: gray;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 3px 8px;
+}
+
+.sent {
+    background-color: rgb(213, 249, 186);
+    align-self: flex-end;
+}
+
+.received {
+    background-color: white;
 }

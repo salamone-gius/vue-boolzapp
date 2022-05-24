@@ -16,85 +16,139 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+    <body>
 
-    <main>
-        <div id="app" class="flex big container">
-            <div class="left-side container">
-                <section class="flex header">
-                    <div class="flex my avatar box">
-                        <img src="img/me.png" alt="">
-                        <div class="my name">Giuseppe</div>
-                    </div>
-                    <div class="flex options box">
-                        <button>
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-message"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                    </div>
-                </section>
-                <section class="notifications">
-                    <div class="flex notifications box">
-                        <button class="icon box">
-                            <i class="fa-solid fa-bell-slash"></i>   
-                        </button>
-                        <div class="notifications">Ricevi notifiche di nuovi messaggi
-                            <div class="notifications on-off">
-                                <a href="#">Attiva notifiche desktop</a>
+        <main>
+            <div id="app" class="flex big container">
+                <div class="left-side container">
+                    <section class="flex header">
+                        <div class="flex my avatar box">
+                            <img src="img/me.png" alt="">
+                            <div class="my name">Giuseppe</div>
+                        </div>
+                        <div class="flex options box">
+                            <button>
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </button>
+                            <button>
+                                <i class="fa-solid fa-message"></i>
+                            </button>
+                            <button>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="notifications">
+                        <div class="flex notifications box">
+                            <button class="icon box">
+                                <i class="fa-solid fa-bell-slash"></i>   
+                            </button>
+                            <div class="notifications">Ricevi notifiche di nuovi messaggi
+                                <div class="notifications on-off">
+                                    <a href="#">Attiva notifiche desktop</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section class="flex searchbar">
-                    <button>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <input type="search" name="" id="" placeholder="Cerca o inizia una nuova chat">
-                </section>
-                <section class="contact-list">
-                    <div class="flex contact box" v-for="(contact, index) in contacts">
-                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
-                        <span class="contact info">
-                            <div class="contact name">{{contact.name}}</div>
-                            <div class="day last message">Ultimo messaggio inviato il{{contact.messages.date}}</div>
-                            <div class="time last message">00:00</div>
-                        </span>
-                    </div>
-                </section>
-            </div>
-            <div class="right-side container">
-                <div class="flex header">
-                    <div class="flex avatar box">
-                        <img src="img/placeholder.jpg" alt="">
-                        <div class="interlocutor name">Gerlando
-                            <div class="last access">Ultimo accesso...</div>
-                        </div>
-                    </div>
-                    <div class="flex options box">
+                    </section>
+                    <section class="flex searchbar">
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <button>
-                            <i class="fa-solid fa-paperclip"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                    </div>
+                        <input type="search" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                    </section>
+                    <section class="contact-list">
+                        <div class="flex contact box" v-for="(contact, index) in contacts">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                            <span class="contact info">
+                                <div class="contact name">{{contact.name}}</div>
+                                <div class="day last message">Ultimo messaggio inviato il{{contact.messages.date}}</div>
+                                <div class="time last message">00:00</div>
+                            </span>
+                        </div>
+                    </section>
+                </div>
+                <div class="right-side container">
+                    <section class="flex header">
+                        <div class="flex avatar box">
+                            <img src="img/placeholder.jpg" alt="">
+                            <div class="interlocutor name">Gerlando
+                                <div class="last access">Ultimo accesso...</div>
+                            </div>
+                        </div>
+                        <div class="flex options box">
+                            <button>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <button>
+                                <i class="fa-solid fa-paperclip"></i>
+                            </button>
+                            <button>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="flex messages">
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="received message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="received message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="received message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="received message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="sent message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                        <div class="received message">
+                            <span>fffffffffff</span>
+                            <span class="time-message">00:00</span>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </div>
-    </main>
-    
+        </main>
+        
 
-    <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/main.js"></script>
-</body>
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>
