@@ -73,6 +73,7 @@ i {
 /* --- LEFT-SIDE --- */
 .left-side.container {
     width: 35%;
+    background-color: white;
 }
 
 .notifications.box {
@@ -89,12 +90,25 @@ i {
 
 .notifications .icon.box i {
     color: #8EDAFC;
-    }
+}
     
+.notifications.on-off a {
+    color: gray;
+    font-size: 14px;
+}
 
+.searchbar {
+    font-size: 14px;
+    padding: 10px;
+}
 
+.searchbar button {
+    margin: 0 10px;
+}
 
-
+.searchbar input {
+    width: 200px;
+}
 
 
 
