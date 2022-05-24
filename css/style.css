@@ -9,8 +9,6 @@
 /* -------- COMMONS -------- */
 body {
     font-family: 'Lato', sans-serif;
-    width: 100vw;
-    height: 100vh;
     background: linear-gradient(
         #009688,
         #009688 15%,
@@ -27,6 +25,7 @@ button {
     background-color: transparent;
     margin: 0 4px;
     padding: 4px;
+    cursor: pointer;
 }
 
 button:hover {
@@ -48,9 +47,9 @@ i {
 
 /* -------- MAIN -------- */
 .big.container {
-    width: 80vw;
-    height: 80vh;
-    margin: 10vh auto;
+    width: 90vw;
+    height: 90vh;
+    margin: 5vh auto;
     border: 1px solid lightgray;
 }
 
@@ -108,8 +107,41 @@ i {
 
 .searchbar input {
     width: 200px;
+    background-color: #FAFAFA;
 }
 
+.contact-list {
+    max-height: 62vh;
+    overflow-y: scroll;
+}
+
+.contact-list .contact.box img {
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 15px;
+}
+
+.contact-list .contact.box {
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.contact-list .contact.box:hover {
+    background-color: #F4F5F5;
+}
+
+.contact-list .contact.box .contact.info .time.last.message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.contact.info .day.last.message, .contact.info .time.last.message {
+    color: gray;
+    font-size: 12px;
+}
 
 
 /* --- RIGHT-SIDE --- */
@@ -117,7 +149,7 @@ i {
     width: 65%;
 }
 
-.last.access {
+.header .last.access {
     font-size: 12px;
     color: gray;
     margin-top: 2px;

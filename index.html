@@ -21,7 +21,7 @@
     <main>
         <div id="app" class="flex big container">
             <div class="left-side container">
-                <div class="flex header">
+                <section class="flex header">
                     <div class="flex my avatar box">
                         <img src="img/me.png" alt="">
                         <div class="my name">Giuseppe</div>
@@ -37,8 +37,8 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
                     </div>
-                </div>
-                <div class="notifications">
+                </section>
+                <section class="notifications">
                     <div class="flex notifications box">
                         <button class="icon box">
                             <i class="fa-solid fa-bell-slash"></i>   
@@ -49,13 +49,23 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex searchbar">
+                </section>
+                <section class="flex searchbar">
                     <button>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                     <input type="search" name="" id="" placeholder="Cerca o inizia una nuova chat">
-                </div>
+                </section>
+                <section class="contact-list">
+                    <div class="flex contact box" v-for="(contact, index) in contacts">
+                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                        <span class="contact info">
+                            <div class="contact name">{{contact.name}}</div>
+                            <div class="day last message">Ultimo messaggio inviato il{{contact.messages.date}}</div>
+                            <div class="time last message">00:00</div>
+                        </span>
+                    </div>
+                </section>
             </div>
             <div class="right-side container">
                 <div class="flex header">
