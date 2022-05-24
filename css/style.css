@@ -9,4 +9,36 @@
 /* -------- COMMONS -------- */
 body {
     font-family: 'Lato', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        #009688,
+        #009688 15%,
+        #DBDBD2 15%
+    );
+}
+
+.flex {
+    display: flex;
+}
+
+/* -------- MAIN -------- */
+.big.container {
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh auto;
+}
+
+.big.container header {
+    background-color: #E6DFD6;
+}
+
+/* --- LEFT-SIDE --- */
+.left-side.container {
+    width: 30%;
+}
+
+/* --- RIGHT-SIDE --- */
+.right-side.container {
+    width: 70%;
 }
