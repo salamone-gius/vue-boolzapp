@@ -88,7 +88,9 @@
                         </div>
                     </section>
                     <section class="flex messages">
-                        <div class="sent message"  v-for="contact in contacts[currentIndex].messages">
+                        <!-- :class="SE contact.status è uguale a 'sent'" ALLORA (?) aggiungo la classe 'sent', ALTRIMENTI (:) aggiungo la classe 'received' -->
+                        <!-- v-for: accedo all'oggetto nidificato attraverso la dot notation -->
+                        <div class="message" :class="contact.status === 'sent' ? 'sent' : 'received'" v-for="contact in contacts[currentIndex].messages">
                             <span>{{contact.message}}</span>
                             <span class="time-message">{{contact.date}}</span>
                         </div>
