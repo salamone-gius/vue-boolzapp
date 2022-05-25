@@ -2,8 +2,8 @@
 const app = new Vue ({
     el: "#app",
     data: {
-        // imposto 'currentIndex' a 0 come elemento di 'data'
-        currentIndex: 1,
+        // imposto la variabile 'currentIndex' a 0 come elemento di 'data'
+        currentIndex: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -173,6 +173,6 @@ const app = new Vue ({
         // indice corrente (currentIndex) diventa uguale all'indice dell'elemento (index)
         chatChange(index) {
             this.currentIndex = index;
-        }
-    }
+        },
+    },
 })

@@ -58,7 +58,8 @@
                     </section>
                     <section class="contact-list">
                         <!-- all'evento click (@click) si avvia la funzione 'chatChange' -->
-                        <div class="flex contact box" v-for="(contact, index) in contacts" @click="chatChange(index)">
+                        <!-- :class="aggiungo la classe 'activeChat' SE (:) l'indice corrente è uguale all'indice del contatto -->
+                        <div class="flex contact box" v-for="(contact, index) in contacts" @click="chatChange(index)" :class="{activeChat : currentIndex === index}">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span class="contact info">
                                 <div class="contact name">{{contact.name}}</div>
