@@ -63,8 +63,9 @@
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span class="contact info">
                                 <div class="contact name">{{contact.name}}</div>
-                                <div class="day last message">Ultimo messaggio inviato il{{contact.messages.date}}</div>
-                                <div class="time last message">00:00</div>
+                                <!-- visualizzo la data e l'ora dell'ultima conversazione (nelcontatto.neimessaggi[indice uguale a lunghezza dell'array -1 per selezionare l'ultimo message].nelladata.dividolastringa('separata da spazio')[indice di array restituito da split]) -->
+                                <div class="day last message">Ultima conversazione il {{contact.messages[contact.messages.length -1].date.split(' ')[0]}}</div>
+                                <div class="time last message">{{contact.messages[contact.messages.length -1].date.split(' ')[1]}}</div>
                             </span>
                         </div>
                     </section>
@@ -92,9 +93,9 @@
                     <section class="flex messages">
                         <!-- :class="SE contact.status è uguale a 'sent'" ALLORA (?) aggiungo la classe 'sent', ALTRIMENTI (:) aggiungo la classe 'received' -->
                         <!-- v-for: accedo all'oggetto nidificato attraverso la dot notation -->
-                        <div class="message" :class="contact.status === 'sent' ? 'sent' : 'received'" v-for="contact in contacts[currentIndex].messages">
-                            <span>{{contact.message}}</span>
-                            <span class="time-message">{{contact.date}}</span>
+                        <div class="message" :class="messageDetails.status === 'sent' ? 'sent' : 'received'" v-for="messageDetails in contacts[currentIndex].messages">
+                            <span>{{messageDetails.message}}</span>
+                            <span class="time-message">{{messageDetails.date.split()[1]}}</span>
                         </div>
                     </section>
                     <section class="flex footer">
