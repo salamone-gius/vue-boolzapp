@@ -57,7 +57,8 @@
                         <input class="search-contact" type="search" name="" id="" placeholder=" Cerca o inizia una nuova chat">
                     </section>
                     <section class="contact-list">
-                        <div class="flex contact box" v-for="(contact, index) in contacts">
+                        <!-- all'evento click (@click) si avvia la funzione 'chatChange' -->
+                        <div class="flex contact box" v-for="(contact, index) in contacts" @click="chatChange(index)">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span class="contact info">
                                 <div class="contact name">{{contact.name}}</div>

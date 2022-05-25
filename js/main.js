@@ -3,7 +3,7 @@ const app = new Vue ({
     el: "#app",
     data: {
         // imposto 'currentIndex' a 0 come elemento di 'data'
-        currentIndex: 0,
+        currentIndex: 1,
         contacts: [
             {
                 name: 'Michele',
@@ -167,5 +167,12 @@ const app = new Vue ({
                 ],
             }
         ]
+    },
+    // creo la sezione 'methods' dove inserirò le mie funzioni
+    methods: {
+        // indice corrente (currentIndex) diventa uguale all'indice dell'elemento (index)
+        chatChange(index) {
+            this.currentIndex = index;
+        }
     }
 })
