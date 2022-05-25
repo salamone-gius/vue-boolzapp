@@ -58,7 +58,7 @@
                     </section>
                     <section class="contact-list">
                         <div class="flex contact box" v-for="(contact, index) in contacts">
-                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span class="contact info">
                                 <div class="contact name">{{contact.name}}</div>
                                 <div class="day last message">Ultimo messaggio inviato il{{contact.messages.date}}</div>
@@ -70,8 +70,8 @@
                 <div class="right-side container">
                     <section class="flex header">
                         <div class="flex avatar box">
-                            <img src="img/placeholder.jpg" alt="">
-                            <div class="interlocutor name">Gerlando
+                            <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
+                            <div class="interlocutor name">{{contacts[currentIndex].name}}
                                 <div class="last access">Ultimo accesso...</div>
                             </div>
                         </div>
@@ -88,57 +88,9 @@
                         </div>
                     </section>
                     <section class="flex messages">
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="received message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="received message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="received message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="received message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="sent message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
-                        </div>
-                        <div class="received message">
-                            <span>fffffffffff</span>
-                            <span class="time-message">00:00</span>
+                        <div class="sent message"  v-for="contact in contacts[currentIndex].messages">
+                            <span>{{contact.message}}</span>
+                            <span class="time-message">{{contact.date}}</span>
                         </div>
                     </section>
                     <section class="flex footer">

@@ -117,7 +117,7 @@ i {
 
 .contact-list {
     height: 61.5vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .contact-list .contact.box img {
@@ -163,7 +163,7 @@ i {
     height: 70vh;
     background-image: url(../img/mine.jpg);
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .messages .message {
