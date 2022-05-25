@@ -63,9 +63,10 @@
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span class="contact info">
                                 <div class="contact name">{{contact.name}}</div>
-                                <!-- visualizzo la data e l'ora dell'ultima conversazione (nelcontatto.neimessaggi[indice uguale a lunghezza dell'array -1 per selezionare l'ultimo message].nelladata.dividolastringa('separata da spazio')[indice di array restituito da split]) -->
+                                <!-- visualizzo la data dell'ultima conversazione (nelcontatto.neimessaggi[indice uguale a lunghezza dell'array -1 per selezionare l'ultimo message].nelladata.dividolastringa('separata da spazio')[indice di array restituito da split]) -->
                                 <div class="day last message">Ultima conversazione il {{contact.messages[contact.messages.length -1].date.split(' ')[0]}}</div>
-                                <div class="time last message">{{contact.messages[contact.messages.length -1].date.split(' ')[1]}}</div>
+                                <!-- visualizzo l'ora dell'ultima conversazione (nelcontatto.neimessaggi[indice uguale a lunghezza dell'array -1 per selezionare l'ultimo message].nelladata.prendodallastringa(parto dal carattere in posizione 11, prendo solo i successivi 5 caratteri) -->
+                                <div class="time last message">{{contact.messages[contact.messages.length -1].date.substr(11, 5)}}</div>
                             </span>
                         </div>
                     </section>
@@ -75,7 +76,7 @@
                         <div class="flex avatar box">
                             <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
                             <div class="interlocutor name">{{contacts[currentIndex].name}}
-                                <div class="last access">Ultimo accesso...</div>
+                                <div class="last access">Ultimo accesso il...</div>
                             </div>
                         </div>
                         <div class="flex options box">
@@ -95,7 +96,7 @@
                         <!-- v-for: accedo all'oggetto nidificato attraverso la dot notation -->
                         <div class="message" :class="messageDetails.status === 'sent' ? 'sent' : 'received'" v-for="messageDetails in contacts[currentIndex].messages">
                             <span>{{messageDetails.message}}</span>
-                            <span class="time-message">{{messageDetails.date.split()[1]}}</span>
+                            <span class="time-message">{{messageDetails.date.substr(11, 5)}}</span>
                         </div>
                     </section>
                     <section class="flex footer">
