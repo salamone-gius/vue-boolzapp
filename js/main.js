@@ -187,11 +187,11 @@ const app = new Vue ({
                 let italianMonth = now.getMonth()+1;
                 // SE il mese corrente è minore di 10...
                 if (italianMonth < 10) {
-                    //... 'month' sarà uguale al valore din italianMonth con uno 0 stringato davanti...
+                    //... 'month' sarà uguale al valore di italianMonth con uno 0 stringato davanti...
                     month = "0"+ italianMonth;
                 // ...ALTRIMENTI...
                 }else{
-                    //... 'month' sarà uguale al valore din italianMonth
+                    //... 'month' sarà uguale al valore di italianMonth
                     month = italianMonth;
                 }
                 // ...creo un nuovo oggetto con newMessageContent come valore della chiave 'message' che andrò a pushare in inapp.incontacts[all'indice corrente quindi nella chat corrente].neimessages...
@@ -200,14 +200,22 @@ const app = new Vue ({
                         date: `${now.getDate()}/${month}/${now.getFullYear()} ${now.toLocaleTimeString()}`,
                         message: this.newMessageContent,
                         status: 'sent',
-                    });
+                    }
+                    );
                 // ...svuoto il campo input/newMessageContent.
                 this.newMessageContent = '';
+                // imposto il setTimeout...
+                setTimeout(
+                    // ...creo un nuovo oggetto che andrò a pushare in inapp.incontacts[all'indice corrente quindi nella chat corrente].neimessages...
+                    this.contacts[currentIndex].messages.push(
+                        {
+                            date: `${now.getDate()}/${month}/${now.getFullYear()} ${now.toLocaleTimeString()}`,
+                            message: "Ok!",
+                            status: 'received',
+                        }
+                    // ...dopo 1 secondo
+                    ), 1000)
             }
-        },
-        actualTime() {
-            // 
-            actualTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
         }
-    },
+    }
 })
