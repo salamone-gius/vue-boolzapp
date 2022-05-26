@@ -104,7 +104,9 @@
                         <button>
                             <i class="fa-regular fa-face-smile"></i>
                         </button>
-                        <input class="write-message" type="text" value="" placeholder="Scrivi un messaggio">
+                        <!-- attraverso v.model vado a popolare la relativa stringa vuota in main.js -->
+                        <!-- all'evento @keyup.enter (rilascio del tasto invio) si avvia la funzione 'addMessage' -->
+                        <input class="write-message" type="text" placeholder="Scrivi un messaggio" v-model="newMessageContent" @keyup.enter="addMessage(currentIndex)">
                         <button>
                             <i class="fa-solid fa-microphone"></i>
                         </button>

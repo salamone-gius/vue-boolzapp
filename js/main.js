@@ -4,6 +4,8 @@ const app = new Vue ({
     data: {
         // imposto la variabile 'currentIndex' a 0 come elemento di 'data'
         currentIndex: 0,
+        // imposto la variabile 'newMessageContent' a stringa vuota come elemento di 'data' che andrò a popolare attraverso v-model con il testo inserito nella text-input
+        newMessageContent: '',
         contacts: [
             {
                 name: 'Michele',
@@ -170,9 +172,23 @@ const app = new Vue ({
     },
     // creo la sezione 'methods' dove inserirò le mie funzioni
     methods: {
-        // indice corrente (currentIndex) diventa uguale all'indice dell'elemento (index)
         chatChange(index) {
+            // l'indice corrente (currentIndex) diventa uguale all'indice dell'elemento (index)
             this.currentIndex = index;
+        },
+        addMessage(currentIndex) {
+            // SE il campo input/newMessageContent è pieno (diverso da stringa vuota)...
+            if (this.newMessageContent !== '') {
+                // ...creo un nuovo oggetto con newMessageContent come valore della chiave 'message' che andrò a pushare in inapp.incontacts[all'indice corrente quindi nella chat corrente].neimessages...
+                this.contacts[currentIndex].messages.push(
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: this.newMessageContent,
+                        status: 'sent',
+                    });
+                // ...svuoto il campo input/newMessageContent.
+                this.newMessageContent = '';
+            }
         },
     },
 })
