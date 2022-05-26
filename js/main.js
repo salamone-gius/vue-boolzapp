@@ -179,10 +179,25 @@ const app = new Vue ({
         addMessage(currentIndex) {
             // SE il campo input/newMessageContent è pieno (diverso da stringa vuota)...
             if (this.newMessageContent !== '') {
+                // creo un nuovo oggetto 'now' che avrà i valori relativi a data e ora attuale come suoi elementi...
+                const now = new Date();
+                // creo la variabile 'month' come stringa vuota per poi popolarla con il valore del mese in formato italiano (con lo zero davanti)
+                let month = "";
+                // creo la variabile 'italianMonth' con valore now.getMonth()+1 poiché il getMonth() conta da 0 a 11         
+                let italianMonth = now.getMonth()+1;
+                // SE il mese corrente è minore di 10...
+                if (italianMonth < 10) {
+                    //... 'month' sarà uguale al valore din italianMonth con uno 0 stringato davanti...
+                    month = "0"+ italianMonth;
+                // ...ALTRIMENTI...
+                }else{
+                    //... 'month' sarà uguale al valore din italianMonth
+                    month = italianMonth;
+                }
                 // ...creo un nuovo oggetto con newMessageContent come valore della chiave 'message' che andrò a pushare in inapp.incontacts[all'indice corrente quindi nella chat corrente].neimessages...
                 this.contacts[currentIndex].messages.push(
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: `${now.getDate()}/${month}/${now.getFullYear()} ${now.toLocaleTimeString()}`,
                         message: this.newMessageContent,
                         status: 'sent',
                     });
@@ -190,5 +205,9 @@ const app = new Vue ({
                 this.newMessageContent = '';
             }
         },
+        actualTime() {
+            // 
+            actualTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+        }
     },
 })

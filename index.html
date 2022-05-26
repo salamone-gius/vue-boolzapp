@@ -77,7 +77,7 @@
                             <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="">
                             <div class="interlocutor name">{{contacts[currentIndex].name}}
                                 <!-- visualizzo la data dell'ultimo accesso del contatto (neicontatti[all'indice corrente].neimessaggi[indice uguale alla lunghezza dell'array messages -1 per selezionare l'ultimo message].nelladata.dividolastringa('separata da spazio')[all'indice dell'array restituito da split]) -->
-                                <div class="last access">Ultimo accesso il {{contacts[currentIndex].messages[contacts[currentIndex].messages.length - 1].date.split(' ')[0]}}</div>
+                                <div class="last access">Ultimo accesso il {{contacts[currentIndex].messages[contacts[currentIndex].messages.length - 1].date.split(' ')[0]}} alle {{contacts[currentIndex].messages[contacts[currentIndex].messages.length - 1].date.substr(11, 5)}}</div>
                             </div>
                         </div>
                         <div class="flex options box">
