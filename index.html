@@ -54,12 +54,15 @@
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input class="search-contact" type="search" name="" id="" placeholder=" Cerca o inizia una nuova chat">
+                        <!-- attraverso v-model vado a popolare la relativa variabile nel main.js con quello che l'utente inserisce -->
+                        <!-- ell'evento @keyup sul tasto enter avvio la funzione filteredName che restituisce il nuovo array 'filteredName' dove sono contenuti solo i contatti i cui nomi hanno in comune le lettere appena inserite nella searchbar-->
+                        <input class="search-contact" type="search" name="" id="" placeholder="Cerca o inizia una nuova chat" v-model="chatSearch" @keyup.enter="filteredName()">
                     </section>
                     <section class="contact-list">
                         <!-- all'evento click (@click) si avvia la funzione 'chatChange' -->
                         <!-- :class="aggiungo la classe 'activeChat' SE (:) l'indice corrente è uguale all'indice del contatto -->
-                        <div class="flex contact box" v-for="(contact, index) in contacts" @click="chatChange(index)" :class="{activeChat : currentIndex === index}">
+                        <!-- nel v-for non ciclo più l'array 'contacts', ma l'array filtrato 'filteredName' -->
+                        <div class="flex contact box" v-for="(contact, index) in filteredName" @click="chatChange(index)" :class="{activeChat : currentIndex === index}">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span class="contact info">
                                 <div class="contact name">{{contact.name}}</div>

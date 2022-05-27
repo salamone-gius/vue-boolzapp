@@ -6,6 +6,8 @@ const app = new Vue ({
         currentIndex: 0,
         // imposto la variabile 'newMessageContent' a stringa vuota come elemento di 'data' che andrò a popolare attraverso v-model con il testo inserito nella text-input
         newMessageContent: '',
+        // imposto la variabile 'chatSearch' a stringa vuota come elemento di 'data' che andrò a popolare attraverso v-model con il testo inserito nella searchbar-input
+        chatSearch: '',
         contacts: [
             {
                 name: 'Michele',
@@ -217,5 +219,13 @@ const app = new Vue ({
                 )}, 1000)
             }
         }
-    }
+    },
+    computed: {
+        filteredName() {
+            // questa funzione ci ritorna un nuovo array contenente i nomi della lista dei contatti originale filtrata (.filter)
+            return this.contacts.filter(
+                (elm) => elm.name.toLowerCase().includes(this.chatSearch)
+            );
+        },
+    },
 })
