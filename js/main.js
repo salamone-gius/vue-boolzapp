@@ -214,7 +214,7 @@ const app = new Vue ({
                             status: 'received',
                         }
                     // ...dopo 1 secondo
-                )}, 2000)
+                )}, 1000)
             }
         }
     }
