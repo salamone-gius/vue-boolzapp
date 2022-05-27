@@ -205,7 +205,7 @@ const app = new Vue ({
                 // ...svuoto il campo input/newMessageContent.
                 this.newMessageContent = '';
                 // imposto il setTimeout...
-                setTimeout(
+                setTimeout(() => {
                     // ...creo un nuovo oggetto che andrò a pushare in inapp.incontacts[all'indice corrente quindi nella chat corrente].neimessages...
                     this.contacts[currentIndex].messages.push(
                         {
@@ -214,7 +214,7 @@ const app = new Vue ({
                             status: 'received',
                         }
                     // ...dopo 1 secondo
-                    ), 1000)
+                )}, 2000)
             }
         }
     }
